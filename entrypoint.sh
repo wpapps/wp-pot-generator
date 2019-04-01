@@ -5,3 +5,9 @@
 # which is likely the majority case,
 # it does not exit with a 0, and I only care about the final exit.
 set -eo
+
+# Allow some ENV variables to be customized
+if [[ -z "$SLUG" ]]; then
+	SLUG=${GITHUB_REPOSITORY#*/}
+fi
+echo "ℹ︎ SLUG is $SLUG"
