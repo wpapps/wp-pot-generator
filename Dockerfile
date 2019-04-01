@@ -22,9 +22,9 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME            /composer
 ENV VAULT_VERSION 1.0.2
 
-RUN apk update \
-    && apk upgrade \
-    && apk add \
+RUN apt update \
+    && apt upgrade \
+    && apt add \
         bash \
         jq \
         curl \
