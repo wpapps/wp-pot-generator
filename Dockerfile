@@ -78,11 +78,8 @@ RUN apt update \
         php7-xmlreader \
         python \
         py2-pip \
-    && pip install shyaml \
     && cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
     && echo "${TIMEZONE}" > /etc/timezone \
-    && apk del tzdata \
-    && pip install shyaml \
     && rm -rf /var/cache/apk/*
 
 
@@ -90,8 +87,6 @@ RUN apt-get clean -y \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& git config --global user.email "wppotgenerator+github@gmail.com" \
 	&& git config --global user.name "WPPot Generator on GitHub"
-
-RUN rm -rf /var/cache/apk/*
 
 # Set environments
 RUN sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" "$PHP_INI_DIR" && \
