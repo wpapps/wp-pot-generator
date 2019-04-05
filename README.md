@@ -1,4 +1,4 @@
-# Github WordPress Pot Generator
+# WordPress Pot Generator - ***Github Action***
 This Action Generates POT Files for your wordpress Plugin / Theme based on the content inside Github Repo
 
 ## Configuration
