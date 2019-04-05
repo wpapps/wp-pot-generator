@@ -44,6 +44,6 @@ fi
 
 cd "$GITHUB_WORKSPACE"
 ls -l
-wp i18n make-pot . "$SAVE_PATH" --user="$USER" --allow-root --slug="$SLUG" --package-name="$PACKAGE_NAME" --headers=$HEADERS
+wp i18n make-pot . "$SAVE_PATH" --user="$USER" --allow-root --slug="$SLUG" --package-name="$PACKAGE_NAME" --headers="$HEADERS"
 ls -l
 cat $SAVE_PATH
