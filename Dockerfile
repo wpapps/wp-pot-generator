@@ -22,13 +22,10 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME            /composer
 ENV VAULT_VERSION 1.0.2
 
-RUN apt update -y \
-    && apt upgrade -y \
-    && apt-get install -y php7.3-cli git unzip zip openssh-client curl bash py2-pip \
-    && cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
-    && echo "${TIMEZONE}" > /etc/timezone \
-    && rm -rf /var/cache/apk/*
-
+# install the PHP extensions we need
+RUN apt-get update && apt-get install -y wget libpng12-dev libjpeg-dev mysql-client nano less && rm -rf /var/lib/apt/lists/* \
+	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
+	&& docker-php-ext-install gd mysqli
 
 RUN apt-get clean -y \
 	&& rm -rf /var/lib/apt/lists/* \
