@@ -16,7 +16,7 @@ workflow "Deploy" {
 }
 
 action "WP Pot Generator" {
-  uses = "varunsridharan/your-repo-name@master"
+  uses = "varunsridharan/wordpress-pot-generator@master"
   env = {
     SAVE_PATH = "langs/filename.pot"
     ITEM_SLUG = "your-textdomain"
