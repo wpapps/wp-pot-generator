@@ -25,13 +25,10 @@ ENV VAULT_VERSION 1.0.2
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -y wget git mysql-client && rm -rf /var/lib/apt/lists/* 
 
-RUN apt-get clean -y \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& git config --global user.email "wppotgenerator+github@gmail.com" \
+RUN git config --global user.email "wppotgenerator+github@gmail.com" \
 	&& git config --global user.name "WPPot Generator on GitHub"
 
-RUN php --ini
-RUN git -v
+RUN cat /usr/local/etc/php/php.ini
 
 # Set environments
 RUN sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" "$PHP_INI_DIR" && \
