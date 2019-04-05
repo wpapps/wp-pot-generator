@@ -29,9 +29,6 @@ if [[ -z "$DOMAIN" ]]; then
 	DOMAIN=${ITEM_SLUG}
 fi
 
-echo $ITEM_SLUG
-echo $DOMAIN
-
 ## Update Git Config.
 git config --global user.email "wppotgenerator+github@gmail.com" && git config --global user.name "WordPress Pot Generator on GitHub"
 
