@@ -45,3 +45,7 @@ cd "$GITHUB_WORKSPACE"
 wp i18n make-pot . "$SAVE_PATH" --user="$USER" --slug="$SLUG" --package-name="$PACKAGE_NAME" --headers="$HEADERS" --allow-root
 ls -l
 cat $SAVE_PATH
+git add -A
+git commit -m "Pot File Updated"
+echo $GITHUB_WORKSPACE
+#git remote set-url origin https://$gh_token@github.com/wponion/google-fonts.git
