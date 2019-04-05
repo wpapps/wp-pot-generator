@@ -26,9 +26,8 @@ fi
 ## Optional ENV Vars
 
 if [[ -z "$DOMAIN" ]]; then
-	$DOMAIN = ${ITEM_SLUG}
+	DOMAIN=${ITEM_SLUG}
 fi
-
 
 echo $ITEM_SLUG
 echo $DOMAIN
