@@ -30,7 +30,8 @@ RUN apt-get clean -y \
 	&& git config --global user.email "wppotgenerator+github@gmail.com" \
 	&& git config --global user.name "WPPot Generator on GitHub"
 
-RUN php -v
+RUN php --ini
+RUN git -v
 
 # Set environments
 RUN sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" "$PHP_INI_DIR" && \
