@@ -38,6 +38,6 @@ echo "ℹ︎ SLUG is $SLUG"
 
 cd "$GITHUB_WORKSPACE"
 ls -l
-wp i18n make-pot . $SAVE_PATH --allow-root --user $USER
+wp i18n make-pot . "$SAVE_PATH" --user "$USER" --allow-root 
 ls -l
 cat $SAVE_PATH
