@@ -4,7 +4,7 @@ FROM php:7.0-apache
 
 LABEL "com.github.actions.name"="WordPress Pot Generator"
 LABEL "com.github.actions.description"="WordPress Pot File Generator"
-LABEL "com.github.actions.icon"="text"
+LABEL "com.github.actions.icon"="edit"
 LABEL "com.github.actions.color"="blue"
 
 LABEL maintainer="Varun Sridharan <varunsridharan23@gmail.com>"
