@@ -51,4 +51,6 @@ cat $SAVE_PATH
 git add -A
 git commit -m "Pot File Updated"
 echo $GITHUB_WORKSPACE
+echo ${GITHUB_REPOSITORY#*/}
+echo ${GITHUB_REPOSITORY}
 #git remote set-url origin https://$gh_token@github.com/wponion/google-fonts.git
