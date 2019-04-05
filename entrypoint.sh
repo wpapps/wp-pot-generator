@@ -25,22 +25,9 @@ fi
 
 ## Optional ENV Vars
 
-if [[ -z "$PACKAGE_NAME" ]]; then
-	##PACKAGE_NAME = ''
-fi
-
 if [[ -z "$DOMAIN" ]]; then
 	DOMAIN = $ITEM_SLUG
 fi
-
-if [[ -z "$HEADERS" ]]; then
-	##HEADERS = ''
-fi
-
-#if [[ -z "$USER" ]]; then
-#	echo "Set Text User (WordPress.org username / wordpress.org email)"
-#	exit 1
-#fi
 
 
 echo $ITEM_SLUG
