@@ -11,3 +11,6 @@ if [[ -z "$SLUG" ]]; then
 	SLUG=${GITHUB_REPOSITORY#*/}
 fi
 echo "ℹ︎ SLUG is $SLUG"
+
+cd "$GITHUB_WORKSPACE"
+ls -l
