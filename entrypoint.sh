@@ -8,7 +8,7 @@ set -eo
 
 # Allow some ENV variables to be customized
 if [[ -z "$ITEM_SLUG" ]]; then
-	SLUG=${GITHUB_REPOSITORY#*/}
+	ITEM_SLUG=${GITHUB_REPOSITORY#*/}
 fi
 
 if [[ -z "$SAVE_PATH" ]]; then
@@ -26,7 +26,7 @@ fi
 ## Optional ENV Vars
 
 if [[ -z "$DOMAIN" ]]; then
-	DOMAIN = $ITEM_SLUG
+	$DOMAIN = $ITEM_SLUG
 fi
 
 
