@@ -1,3 +1,6 @@
+> **⚠️ Note:** To use this GitHub Action, you must have access to GitHub Actions. GitHub Actions are currently only available in public beta. You can [apply for Github Actions beta access here](https://github.com/features/actions).
+
+
 # WordPress Pot Generator - ***Github Action***
 This Action Generates POT Files for your wordpress Plugin / Theme based on the content inside Github Repo
 
