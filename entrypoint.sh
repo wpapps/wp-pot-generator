@@ -26,7 +26,7 @@ fi
 ## Optional ENV Vars
 
 if [[ -z "$PACKAGE_NAME" ]]; then
-	PACKAGE_NAME = ''
+	##PACKAGE_NAME = ''
 fi
 
 if [[ -z "$DOMAIN" ]]; then
@@ -34,7 +34,7 @@ if [[ -z "$DOMAIN" ]]; then
 fi
 
 if [[ -z "$HEADERS" ]]; then
-	HEADERS = ''
+	##HEADERS = ''
 fi
 
 #if [[ -z "$USER" ]]; then
