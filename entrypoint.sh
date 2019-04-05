@@ -11,6 +11,11 @@ if [[ -z "$SLUG" ]]; then
 	SLUG=${GITHUB_REPOSITORY#*/}
 fi
 
+if [[ -z "$PACKAGE_NAME" ]]; then
+	echo "Set Package Name"
+	exit 1
+fi
+
 if [[ -z "$SAVE_PATH" ]]; then
 	echo "Set Pot File Save destination"
 	exit 1
@@ -21,23 +26,18 @@ if [[ -z "$DOMAIN" ]]; then
 	exit 1
 fi
 
-
-
 if [[ -z "$USER" ]]; then
 	echo "Set Text User (WordPress.org username / wordpress.org email)"
 	exit 1
 fi
-
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
 	echo "Set the GITHUB_TOKEN env variable"
 	exit 1
 fi
 
-echo "ℹ︎ SLUG is $SLUG"
-
 cd "$GITHUB_WORKSPACE"
 ls -l
-wp i18n make-pot . "$SAVE_PATH" --user="$USER" --allow-root 
+wp i18n make-pot . "$SAVE_PATH" --user="$USER" --allow-root --slug="$SLUG" --package-name="$PACKAGE_NAME"
 ls -l
 cat $SAVE_PATH
