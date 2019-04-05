@@ -23,7 +23,7 @@ ENV COMPOSER_HOME            /composer
 ENV VAULT_VERSION 1.0.2
 
 RUN apt update \
-    && apt upgrade \
+    && apt upgrade -y \
     && apt add -y \
         bash \
         jq \
