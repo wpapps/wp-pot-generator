@@ -15,7 +15,7 @@ ENV PHP_MEMORY_LIMIT         512M
 ENV MAX_UPLOAD               50M
 ENV PHP_MAX_FILE_UPLOAD      200
 ENV PHP_MAX_POST             100M
-ENV PHP_INI_DIR              /etc/php7/php.ini
+ENV PHP_INI_DIR              /usr/local/etc/php/php.ini
 ENV HOME                     /root
 ENV PATH                     "/composer/vendor/bin:~/.local/bin:$PATH"
 ENV COMPOSER_ALLOW_SUPERUSER 1
@@ -40,11 +40,6 @@ RUN sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" "$PHP_INI_DIR" 
     sed -i "s|;*max_file_uploads =.*|max_file_uploads = ${PHP_MAX_FILE_UPLOAD}|i" "$PHP_INI_DIR" && \
     sed -i "s|;*post_max_size =.*|post_max_size = ${PHP_MAX_POST}|i" "$PHP_INI_DIR" && \
     sed -i "s|;*cgi.fix_pathinfo=.*|cgi.fix_pathinfo= 0|i" "$PHP_INI_DIR"
-
-# Update php config
-RUN mkdir -p "/etc/php7/conf.d" && \
-    echo "memory_limit=-1" > "/etc/php7/conf.d/memory-limit.ini" && \
-    echo "date.timezone=Asia/Kolkata" > "/etc/php7/conf.d/date_timezone.ini"
 
 
 # Setup wp-cli
