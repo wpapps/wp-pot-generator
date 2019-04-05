@@ -36,8 +36,14 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
+
+if [[ -z "$HEADERS" ]]; then
+	echo "Set the GITHUB_TOKEN env variable"
+	exit 1
+fi
+
 cd "$GITHUB_WORKSPACE"
 ls -l
-wp i18n make-pot . "$SAVE_PATH" --user="$USER" --allow-root --slug="$SLUG" --package-name="$PACKAGE_NAME"
+wp i18n make-pot . "$SAVE_PATH" --user="$USER" --allow-root --slug="$SLUG" --package-name="$PACKAGE_NAME" --headers="$HEADERS"
 ls -l
 cat $SAVE_PATH
