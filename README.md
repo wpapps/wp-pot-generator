@@ -15,7 +15,7 @@ workflow "Deploy" {
   on = "push"
 }
 
-action "WP Pot Generator" {
+action "WordPress Pot Generator" {
   uses = "varunsridharan/wordpress-pot-generator@master"
   env = {
     SAVE_PATH = "langs/filename.pot"
