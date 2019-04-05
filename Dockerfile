@@ -24,8 +24,7 @@ ENV VAULT_VERSION 1.0.2
 
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -y wget git mysql-client && rm -rf /var/lib/apt/lists/* \
-	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-	&& docker-php-ext-install gd mysqli
+	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr
 
 RUN apt-get clean -y \
 	&& rm -rf /var/lib/apt/lists/* \
