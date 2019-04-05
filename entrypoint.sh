@@ -26,7 +26,7 @@ fi
 ## Optional ENV Vars
 
 if [[ -z "$PACKAGE_NAME" ]]; then
-	$PACKAGE_NAME = ''
+	PACKAGE_NAME = ''
 fi
 
 if [[ -z "$DOMAIN" ]]; then
