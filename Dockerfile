@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM php:7.0-apache
 
 LABEL "com.github.actions.name"="WordPress Pot Generator"
 LABEL "com.github.actions.description"="WordPress Pot File Generator"
@@ -30,6 +30,8 @@ RUN apt-get clean -y \
 	&& git config --global user.email "wppotgenerator+github@gmail.com" \
 	&& git config --global user.name "WPPot Generator on GitHub"
 
+RUN php -v
+
 # Set environments
 RUN sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" "$PHP_INI_DIR" && \
     sed -i "s|;*memory_limit =.*|memory_limit = ${PHP_MEMORY_LIMIT}|i" "$PHP_INI_DIR" && \
@@ -43,7 +45,6 @@ RUN mkdir -p "/etc/php7/conf.d" && \
     echo "memory_limit=-1" > "/etc/php7/conf.d/memory-limit.ini" && \
     echo "date.timezone=Asia/Kolkata" > "/etc/php7/conf.d/date_timezone.ini"
 
-RUN php -v
 
 # Setup wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
