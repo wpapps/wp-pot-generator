@@ -14,6 +14,6 @@ echo "ℹ︎ SLUG is $SLUG"
 
 cd "$GITHUB_WORKSPACE"
 ls -l
-wp i18n make-pot . my-plugin.pot
+sudo -u root -i -- wp i18n make-pot . my-plugin.pot
 ls -l
 cat my-plugin.pot
