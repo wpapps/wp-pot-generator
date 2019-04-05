@@ -11,20 +11,30 @@ if [[ -z "$ITEM_SLUG" ]]; then
 	SLUG=${GITHUB_REPOSITORY#*/}
 fi
 
-if [[ -z "$PACKAGE_NAME" ]]; then
-	echo "Set Package Name"
-	exit 1
-fi
-
 if [[ -z "$SAVE_PATH" ]]; then
 	echo "Set Pot File Save destination"
 	exit 1
 fi
 
+
+if [[ -z "$GITHUB_TOKEN" ]]; then
+	echo "Set the GITHUB_TOKEN env variable"
+	exit 1
+fi
+
+
+## Optional ENV Vars
+
+if [[ -z "$PACKAGE_NAME" ]]; then
+	$PACKAGE_NAME = ''
+fi
+
 if [[ -z "$DOMAIN" ]]; then
-	#echo "Set Text Domain"
-	#exit 1
 	DOMAIN = $ITEM_SLUG
+fi
+
+if [[ -z "$HEADERS" ]]; then
+	HEADERS = ''
 fi
 
 #if [[ -z "$USER" ]]; then
@@ -32,14 +42,6 @@ fi
 #	exit 1
 #fi
 
-if [[ -z "$GITHUB_TOKEN" ]]; then
-	echo "Set the GITHUB_TOKEN env variable"
-	exit 1
-fi
-
-if [[ -z "$HEADERS" ]]; then
-	HEADERS = ''
-fi
 
 echo $ITEM_SLUG
 echo $DOMAIN
