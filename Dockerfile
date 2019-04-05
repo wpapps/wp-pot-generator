@@ -1,5 +1,7 @@
 FROM php:7.0-apache
 
+COPY php.ini /usr/local/etc/php/
+
 LABEL "com.github.actions.name"="WordPress Pot Generator"
 LABEL "com.github.actions.description"="WordPress Pot File Generator"
 LABEL "com.github.actions.icon"="upload-cloud"
