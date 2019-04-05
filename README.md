@@ -7,6 +7,7 @@ This Action Generates POT Files for your wordpress Plugin / Theme based on the c
 * `DOMAIN` - WordPress Theme / Plugin ***TextDomain***
 * `PACKAGE_NAME` - WordPress Theme / Plugin Name
 * `GITHUB_TOKEN` - you do not need to generate one but you do have to explicitly make it available to the Action
+* `HEADERS`  - Array in JSON format of custom headers which will be added to the POT file. Defaults to empty array.
 
 ## Example Workflow File
 ```
