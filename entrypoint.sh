@@ -42,7 +42,7 @@ if [[ -z "$HEADERS" ]]; then
 fi
 
 git config --global user.email "wppotgenerator+github@gmail.com" \
-&& git config --global user.name "WPPot Generator on GitHub"
+&& git config --global user.name "WordPress Pot Generator on GitHub"
 
 cd "$GITHUB_WORKSPACE"
 wp i18n make-pot . "$SAVE_PATH" --user="$USER" --slug="$SLUG" --package-name="$PACKAGE_NAME" --headers="$HEADERS" --allow-root
