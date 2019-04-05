@@ -51,4 +51,4 @@ cat $SAVE_PATH
 git add -A
 git commit -m "Pot File Updated"
 git remote set-url origin https://$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git
-git push -f
+git push --set-upstream origin -f
