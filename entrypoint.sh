@@ -10,6 +10,18 @@ set -eo
 if [[ -z "$SLUG" ]]; then
 	SLUG=${GITHUB_REPOSITORY#*/}
 fi
+
+if [[ -z "$destination" ]]; then
+	echo "Set Pot File Save destination"
+	exit 1
+fi
+
+
+if [[ -z "$GITHUB_TOKEN" ]]; then
+	echo "Set the GITHUB_TOKEN env variable"
+	exit 1
+fi
+
 echo "ℹ︎ SLUG is $SLUG"
 
 cd "$GITHUB_WORKSPACE"
