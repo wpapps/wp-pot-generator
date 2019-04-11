@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>WordPress POT Generator - Github Actions</title>
+</head>
+<body>
+<div class="clearfix"></div>
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">WordPress POT Generator - Github Action</h1>
+    <hr/>
+    <form>
+        <div class=" row">
+            <div class="col-md-6 form-group">
+                <label for="workflow_name">Workflow Name</label>
+                <input type="text" class="form-control" name="workflow_name" id="workflow_name"
+                       value="WordPress Pot Generator">
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="workflow_on">Workflow Trigger On</label>
+                <select class="form-control" name="workflow_on" id="workflow_on">
+                    <option value="check_run">check_run</option>
+                    <option value="check_suite">check_suite</option>
+                    <option value="commit_comment">commit_comment</option>
+                    <option value="create">create</option>
+                    <option value="delete">delete</option>
+                    <option value="deployment">deployment</option>
+                    <option value="deployment_status">deployment_status</option>
+                    <option value="fork">fork</option>
+                    <option value="gollum">gollum</option>
+                    <option value="issue_comment">issue_comment</option>
+                    <option value="issues">issues</option>
+                    <option value="label">label</option>
+                    <option value="member">member</option>
+                    <option value="milestone">milestone</option>
+                    <option value="page_build">page_build</option>
+                    <option value="project_card">project_card</option>
+                    <option value="project_column">project_column</option>
+                    <option value="project">project</option>
+                    <option value="public">public</option>
+                    <option value="pull_request_review_comment">pull_request_review_comment</option>
+                    <option value="pull_request_review">pull_request_review</option>
+                    <option value="pull_request">pull_request</option>
+                    <option value="push" selected>push</option>
+                    <option value="repository_vulnerability_alert">repository_vulnerability_alert</option>
+                    <option value="release">release</option>
+                    <option value="repository_dispatch">repository_dispatch</option>
+                    <option value="status">status</option>
+                    <option value="watch">watch</option>
+                    <option value="scheduled">scheduled</option>
+                </select>
+            </div>
+        </div>
+        <hr/>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="PACKAGE_NAME">Package Name (WordPress Theme / Plugin Name)</label>
+                <input type="text" class="form-control" name="PACKAGE_NAME" id="PACKAGE_NAME"
+                       placeholder="Your WordPress Plugin / Theme Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="SAVE_PATH">Pot File Save Location</label>
+                <input type="text" class="form-control" name="SAVE_PATH" id="SAVE_PATH"
+                       value="language/your-plugin.pot">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="ITEM_SLUG">WordPress Theme / Plugin Slug</label>
+                <input type="text" class="form-control" name="ITEM_SLUG" id="ITEM_SLUG">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="DOMAIN">Textdomain</label>
+                <input type="text" class="form-control" name="DOMAIN" id="DOMAIN">
+            </div>
+        </div>
+        <hr/>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="" value="Project-Id-Version" disabled readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="headers[Project-Id-Version]"
+                       placeholder="Your Plugin Name V2.0">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="" value="Report-Msgid-Bugs-To" disabled readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="headers[Report-Msgid-Bugs-To]"
+                       placeholder="https://wordpress.org/support/plugin/your-plugin">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" value="Last-Translator" disabled readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="headers[Last-Translator]"
+                       placeholder="FULL NAME <EMAIL@ADDRESS>">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" value="Language-Team" disabled readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="headers[Language-Team]"
+                       placeholder="LANGUAGE <LL@li.org>">
+            </div>
+        </div>
+        <hr/>
+
+        <div class="form-row">
+            <h3>Github Action Code</h3>
+            <pre style="width:100%;height:500px; padding: 10px; border: 1px solid #ccc;"></pre>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+
+    </form>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="./json.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
+
+
+
