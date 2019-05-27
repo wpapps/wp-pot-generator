@@ -48,6 +48,11 @@ You can contact me on [Twitter][twitter] or through my [email][email].
 | [![DigitalOcean][do-image]][do-ref] | [![JetBrains][jb-image]][jb-ref] |  [![Tidio Chat][tidio-image]][tidio-ref] |
 | --- | --- | --- |
 
+[twitter]: https://twitter.com/varunsridharan2
+[email]: mailto:varunsridharan23@gmail.com
+[website]: https://varunsridharan.in
+[issues]: issues/
+
 [do-image]: https://vsp.ams3.cdn.digitaloceanspaces.com/cdn/DO_Logo_Horizontal_Blue-small.png
 [jb-image]: https://vsp.ams3.cdn.digitaloceanspaces.com/cdn/phpstorm-small.png?v3
 [tidio-image]: https://vsp.ams3.cdn.digitaloceanspaces.com/cdn/tidiochat-small.png
