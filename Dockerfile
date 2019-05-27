@@ -9,7 +9,7 @@ LABEL "com.github.actions.color"="blue"
 
 LABEL maintainer="Varun Sridharan <varunsridharan23@gmail.com>"
 LABEL version="1.0.0"
-LABEL repository="https://github.com/varunsridharan/github-actions-wordpress-pot-generator"
+LABEL repository="https://github.com/wpapps/wp-pot-generator"
 
 # Environments
 ENV TIMEZONE                 Asia/Kolkata
@@ -29,17 +29,6 @@ RUN apt-get update && apt-get install -y wget git mysql-client && rm -rf /var/li
 
 RUN git config --global user.email "wppotgenerator+github@gmail.com" \
 	&& git config --global user.name "WPPot Generator on GitHub"
-
-
-
-# Set environments
-#RUN sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" "$PHP_INI_DIR" && \
-#    sed -i "s|;*memory_limit =.*|memory_limit = ${PHP_MEMORY_LIMIT}|i" "$PHP_INI_DIR" && \
-#    sed -i "s|;*upload_max_filesize =.*|upload_max_filesize = ${MAX_UPLOAD}|i" "$PHP_INI_DIR" && \
-#    sed -i "s|;*max_file_uploads =.*|max_file_uploads = ${PHP_MAX_FILE_UPLOAD}|i" "$PHP_INI_DIR" && \
-#    sed -i "s|;*post_max_size =.*|post_max_size = ${PHP_MAX_POST}|i" "$PHP_INI_DIR" && \
-#    sed -i "s|;*cgi.fix_pathinfo=.*|cgi.fix_pathinfo= 0|i" "$PHP_INI_DIR"
-
 
 # Setup wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
