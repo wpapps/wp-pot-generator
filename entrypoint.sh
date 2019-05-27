@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# Note that this does not use pipefail
-# because if the grep later doesn't match any deleted files,
-# which is likely the majority case,
-# it does not exit with a 0, and I only care about the final exit.
 set -eo
 
-# Allow some ENV variables to be customized
 if [[ -z "$ITEM_SLUG" ]]; then
 	ITEM_SLUG=${GITHUB_REPOSITORY#*/}
 fi
@@ -16,15 +11,12 @@ if [[ -z "$SAVE_PATH" ]]; then
 	exit 1
 fi
 
-
 if [[ -z "$GITHUB_TOKEN" ]]; then
 	echo "Set the GITHUB_TOKEN env variable"
 	exit 1
 fi
 
-
 ## Optional ENV Vars
-
 if [[ -z "$DOMAIN" ]]; then
 	DOMAIN=${ITEM_SLUG}
 fi
@@ -33,12 +25,7 @@ fi
 git config --global user.email "wppotgenerator+github@gmail.com" && git config --global user.name "WordPress Pot Generator on GitHub"
 
 cd "$GITHUB_WORKSPACE"
-
-# Generate POT File
-#wp i18n make-pot . "$SAVE_PATH" --user="$USER" --slug="$SLUG" --package-name="$PACKAGE_NAME" --headers="$HEADERS" --allow-root
 wp i18n make-pot . "$SAVE_PATH" --slug="$ITEM_SLUG" --package-name="$PACKAGE_NAME" --headers="$HEADERS" --allow-root
-
-# ls -l | cat $SAVE_PATH | echo ${GITHUB_REF} | echo $GITHUB_REF
 
 # Update In Github
 git add -A
